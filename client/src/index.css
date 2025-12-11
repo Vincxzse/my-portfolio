@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.fira-code {
+  font-family: 'Fira Code', monospace;
+}
