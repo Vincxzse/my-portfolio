@@ -47,30 +47,30 @@ export default function HomeSection() {
 
     return (
         <>
-            <div className="grid grid-cols-2 w-screen min-h-screen px-40">
-                <div className="h-full w-full flex flex-col items-start justify-center gap-10">
+            <div className="flex flex-col items-center justify-center lg:grid grid-cols-2 w-full min-h-screen mt-30 lg:mt-10 px-10 lg:px-40 gap-15 lg:gap-5">
+                <div className="h-full w-full flex flex-col items-center lg:items-start justify-center gap-5 lg:gap-10">
                     <div className="flex items-center justify-center gap-2 bg-gray-800 px-4 py-2 rounded-full border-2 border-red-500">
                         <img src={starIcon} alt="stars" className="h-7 w-auto invert-100" />
                         <h2 className="text-white text-lg">Available for work</h2>
                     </div>
-                    <h1 className="text-6xl text-white font-normal">
+                    <h1 className="text-4xl lg:text-6xl text-white font-normal">
                         Hi, I'm <span className="text-red-500">Vince</span>
                     </h1>
-                    <div className="flex flex-row items-center justify-start gap-5">
-                        <img src={codeIcon} alt="code-icon" className="h-10 w-auto"/>
-                        <h2 className="text-4xl text-gray-400">
+                    <div className="flex flex-row items-center justify-center lg:justify-start gap-5">
+                        <img src={codeIcon} alt="code-icon" className="h-10 w-auto hidden lg:flex"/>
+                        <h2 className="text-2xl lg:text-4xl text-gray-400 text-center lg:text-left">
                             {displayText}
                             <span className="inline-block w-0.5 h-6 bg-orange-500 ml-1 animate-blink"></span>
                         </h2>
                     </div>
-                    <p className="text-lg font-normal text-white">
+                    <p className="text-md lg:text-lg font-normal text-white text-center lg:text-left">
                         I craft beautiful, functional, and user-centered digital experiences. Passionate about turning complex problems into elegant solutions through clean code and thoughtful design.
                     </p>
-                    <div className="flex flex-row items-center justify-center gap-5">
-                        <button className="border-2 border-red-500 bg-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-700 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl">
+                    <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-5 w-full">
+                        <button className="border-2 border-red-500 bg-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-700 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl lg:w-auto lg:h-auto w-full">
                             View My Work
                         </button>
-                        <button className="border-2 border-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-500 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl">
+                        <button className="border-2 border-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-500 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl lg:w-auto lg:h-auto w-full">
                             Get In Touch
                         </button>
                     </div>
@@ -90,10 +90,10 @@ export default function HomeSection() {
                         <p className="text-gray-400">Currently cooking some shit up</p>
                     </div>
                 </div>
-                <div className="w-full h-full flex items-center justify-end">
-                    <div className="flex items-center justify-center w-130 h-130 border border-[rgba(255,0,0,0.5)] rounded-full">
-                        <div className="flex items-center justify-center w-100 h-100 border border-[rgba(255,0,0,0.5)] rounded-full relative">
-                            <img src={profileImage} alt="profile image" className="w-100 h-100 rounded-full animate-bounce-low shadow-md shadow-red-300" />
+                <div className="w-full h-full flex items-center justify-center lg:justify-end">
+                    <div className="flex items-center justify-center w-100 h-100 lg:w-130 lg:h-130 border border-[rgba(255,0,0,0.5)] rounded-full">
+                        <div className="flex items-center justify-center w-70 h-70 lg:w-100 lg:h-100 border border-[rgba(255,0,0,0.5)] rounded-full relative">
+                            <img src={profileImage} alt="profile image" className="w-70 h-70 lg:w-100 lg:h-100 rounded-full animate-bounce-low shadow-md shadow-red-300" />
                             <div className="flex flex-row items-center justify-center absolute bg-gray-800 p-2 rounded-full top-0 right-0 shadow-md shadow-[rgba(255,255,255,0.1)]">
                                 <p className="text-white">🚀 Fast</p>
                             </div>

@@ -5,7 +5,9 @@ function App() {
 
   return (
     <>
-      <MainComponent />
+      <div className='flex flex-col items-start justify-start'>
+        <MainComponent />
+      </div>
     </>
   )
 }
