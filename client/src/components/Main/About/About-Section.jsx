@@ -14,7 +14,7 @@ const rocketIcon = "./images/rocket.png"
 export default function AboutSection() {
     return (
         <>
-            <div className="flex flex-col items-start justify-start h-auto lg:h-screen w-full px-5 lg:px-40 gap-10">
+            <div className="flex flex-col items-start justify-between h-auto lg:h-screen w-full px-5 lg:px-40 gap-15 lg:gap-0">
                 <div className="w-full lg:w-1/2 flex flex-row items-center justify-start gap-5">
                     <h1 className="text-white text-2xl font-semibold"><span className="text-red-500">#</span>about me</h1>
                     <div className="flex-grow bg-red-500 h-[1px] rounded-full"></div>
