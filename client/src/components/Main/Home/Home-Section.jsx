@@ -67,20 +67,26 @@ export default function HomeSection() {
                         I craft beautiful, functional, and user-centered digital experiences. Passionate about turning complex problems into elegant solutions through clean code and thoughtful design.
                     </p>
                     <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-5 w-full">
-                        <button className="border-2 border-red-500 bg-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-700 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl lg:w-auto lg:h-auto w-full">
+                        <a
+                            href="#projects"
+                            className="border-2 border-red-500 bg-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-700 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl lg:w-auto lg:h-auto w-full"
+                        >
                             View My Work
-                        </button>
-                        <button className="border-2 border-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-500 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl lg:w-auto lg:h-auto w-full">
+                        </a>
+                        <a
+                            href="#contacts"
+                            className="border-2 border-red-500 text-white text-lg px-8 py-2 cursor-pointer hover:bg-red-500 transition duration-200 flex flex-row items-center justify-center gap-2 rounded-xl lg:w-auto lg:h-auto w-full"
+                        >
                             Get In Touch
-                        </button>
+                        </a>
                     </div>
                     <div className="flex flex-row items-center justify-start">
                         <div className="flex flex-row items-center justify-start gap-2 pr-3 mr-3 border-r-2 border-white">
-                            <Links linkImage={githubIcon} linkUrl="" />
-                            <Links linkImage={linkedInIcon} linkUrl="" />
+                            <Links linkImage={githubIcon} linkUrl="https://github.com/Vincxzse" />
+                            <Links linkImage={linkedInIcon} linkUrl="www.linkedin.com/in/vince-salenga-03758329a" />
                             <Links linkImage={mailIcon} linkUrl="" />
                         </div>
-                        <Links linkImage={downloadIcon} linkUrl="" />
+                        <Links linkImage={downloadIcon} linkUrl="/Files/VinceSalenga_CV.pdf" />
                     </div>
                     <div className="flex flex-row items-center justify-start gap-2">
                         <div className="relative">
