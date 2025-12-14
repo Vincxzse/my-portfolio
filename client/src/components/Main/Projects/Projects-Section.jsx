@@ -22,10 +22,10 @@ export default function ProjectsSection() {
                             <p className="text-white">A to-do app where you can create, update, and delete tasks.</p>
                             <div className="flex flex-row items-center justify-start w-full gap-2">
                                 <div className="flex items-center justify-center px-3 py-1 bg-gray-800 rounded-lg border border-gray-700">
-                                    <p className="text-white">React.js</p>
+                                    <p className="text-white">React</p>
                                 </div>
                                 <div className="flex items-center justify-center px-3 py-1 bg-gray-800 rounded-lg border border-gray-700">
-                                    <p className="text-white">Node.js</p>
+                                    <p className="text-white">Node</p>
                                 </div>
                                 <div className="flex items-center justify-center px-3 py-1 bg-gray-800 rounded-lg border border-gray-700">
                                     <p className="text-white">PostgreSQL</p>
