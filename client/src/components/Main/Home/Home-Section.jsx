@@ -47,7 +47,7 @@ export default function HomeSection() {
 
     return (
         <>
-            <div id="home" className="flex flex-col items-center justify-center lg:grid grid-cols-2 w-full min-h-screen mt-30 lg:mt-10 px-10 lg:px-40 gap-15 lg:gap-5">
+            <div id="home" className="flex flex-col items-center justify-center lg:grid grid-cols-2 w-full min-h-screen mt-30 lg:mt-20 px-10 lg:px-40 gap-15 lg:gap-5">
                 <div className="h-full w-full flex flex-col items-center lg:items-start justify-center gap-5 lg:gap-10">
                     <div className="flex items-center justify-center gap-2 bg-gray-800 px-4 py-2 rounded-full border-2 border-red-500">
                         <img src={starIcon} alt="stars" className="h-7 w-auto invert-100" />
