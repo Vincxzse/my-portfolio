@@ -8,7 +8,7 @@ const sendIcon = "./images/send.png"
 export default function ContactSection() {
     return (
         <>
-            <div id="contacts" className="flex flex-col items-start justify-start w-full lg:h-screen px-10 lg:px-40 gap-15">
+            <div id="contacts" className="flex flex-col items-start justify-start w-full lg:h-screen px-5 lg:px-40 gap-15">
                 <div className="w-full lg:w-1/2 flex flex-row items-center justify-start gap-5">
                     <h1 className="text-white text-2xl font-semibold"><span className="text-red-500">#</span>contacts</h1>
                     <div className="flex-grow bg-red-500 h-[1px] rounded-full"></div>
