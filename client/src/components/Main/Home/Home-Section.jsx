@@ -47,7 +47,7 @@ export default function HomeSection() {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center lg:grid grid-cols-2 w-full min-h-screen mt-30 lg:mt-10 px-10 lg:px-40 gap-15 lg:gap-5">
+            <div id="home" className="flex flex-col items-center justify-center lg:grid grid-cols-2 w-full min-h-screen mt-30 lg:mt-10 px-10 lg:px-40 gap-15 lg:gap-5">
                 <div className="h-full w-full flex flex-col items-center lg:items-start justify-center gap-5 lg:gap-10">
                     <div className="flex items-center justify-center gap-2 bg-gray-800 px-4 py-2 rounded-full border-2 border-red-500">
                         <img src={starIcon} alt="stars" className="h-7 w-auto invert-100" />
@@ -94,10 +94,10 @@ export default function HomeSection() {
                     <div className="flex items-center justify-center w-100 h-100 lg:w-130 lg:h-130 border border-[rgba(255,0,0,0.5)] rounded-full">
                         <div className="flex items-center justify-center w-70 h-70 lg:w-100 lg:h-100 border border-[rgba(255,0,0,0.5)] rounded-full relative">
                             <img src={profileImage} alt="profile image" className="w-70 h-70 lg:w-100 lg:h-100 rounded-full animate-bounce-low shadow-md shadow-red-300" />
-                            <div className="flex flex-row items-center justify-center absolute bg-gray-800 p-2 rounded-full top-0 right-0 shadow-md shadow-[rgba(255,255,255,0.1)]">
+                            <div className="flex flex-row items-center justify-center absolute bg-gray-800 p-2 rounded-full top-0 right-0 shadow-md shadow-[rgba(255,255,255,0.1)] animate-bounce-mid">
                                 <p className="text-white">🚀 Fast</p>
                             </div>
-                            <div className="flex flex-row items-center justify-center absolute bg-gray-800 p-2 rounded-full bottom-0 left-0 shadow-md shadow-[rgba(255,255,255,0.1)]">
+                            <div className="flex flex-row items-center justify-center absolute bg-gray-800 p-2 rounded-full bottom-0 left-0 shadow-md shadow-[rgba(255,255,255,0.1)] animate-bounce-high">
                                 <p className="text-white">💡 Creative</p>
                             </div>
                         </div>

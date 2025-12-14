@@ -9,10 +9,10 @@ export default function NavigationBar() {
                     <h2 className="font-medium text-2xl">Vince</h2>
                 </div>
                 <div className="hidden lg:flex flex-row items-end gap-10">
-                    <NavButton buttonTitle="home" />
-                    <NavButton buttonTitle="about" />
-                    <NavButton buttonTitle="projects" />
-                    <NavButton buttonTitle="contacts" />
+                    <NavButton buttonTitle="home" targetId="home" />
+                    <NavButton buttonTitle="about" targetId="about" />
+                    <NavButton buttonTitle="projects" targetId="projects" />
+                    <NavButton buttonTitle="contacts" targetId="contacts" />
                 </div>
             </div>
         </>

@@ -1,6 +1,7 @@
 import NavigationBar from "./Navigation-Bar/Navigation-Bar"
 import HomeSection from "./Home/Home-Section"
 import AboutSection from "./About/About-Section"
+import ProjectsSection from "./Projects/Projects-Section"
 
 const rightArrowIcon = "./images/right-arrow.png"
 
@@ -11,6 +12,7 @@ export default function MainComponent() {
                 <NavigationBar />
                 <HomeSection />
                 <AboutSection />
+                <ProjectsSection />
             </div>
         </>
     ) 

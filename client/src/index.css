@@ -39,8 +39,39 @@
   }
 }
 
+@keyframes bounce-mid {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes bounce-high {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
 .animate-bounce-low {
   animation: bounce-low 5s infinite;
+}
+
+.animate-bounce-mid {
+  animation: bounce-mid 4s infinite;
+}
+
+.animate-bounce-high {
+  animation: bounce-high 6s infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
 }
 
 body {
