@@ -9,7 +9,10 @@ export default function NavigationBar() {
     return (
         <>
             { mobileMenu ? 
-                <div className="fixed z-101 bg-[#282C33] h-screen w-screen flex flex-col items-start justify-start gap-5 px-10 py-20">
+                <div
+                    onClick={() => setMobileMenu(false)}
+                    className="fixed z-101 bg-[#282C33] h-screen w-screen flex flex-col items-start justify-start gap-5 px-10 py-20"
+                >
                     <NavButton buttonTitle="home" targetId="home" closeMobileMenu={() => setMobileMenu(false)} />
                     <NavButton buttonTitle="about" targetId="about" closeMobileMenu={() => setMobileMenu(false)} />
                     <NavButton buttonTitle="projects" targetId="projects" closeMobileMenu={() => setMobileMenu(false)} />
