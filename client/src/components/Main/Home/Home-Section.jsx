@@ -14,7 +14,6 @@ export default function HomeSection() {
     const occupations = [
         "Full Stack Web Developer",
         "UI/UX Enthusiast",
-        "AI Engineer (Working on it)"
     ]
     
     const [displayText, setDisplayText] = useState("")
