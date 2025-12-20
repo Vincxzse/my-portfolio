@@ -1,4 +1,7 @@
 
+import { useState } from "react"
+import { BACKEND_URL } from "../../../../config"
+import Swal from "sweetalert2"
 
 const mailIcon = "./images/mail.png"
 const phoneIcon = "./images/phone.png"
@@ -6,6 +9,62 @@ const locationIcon = "./images/location.png"
 const sendIcon = "./images/send.png"
 
 export default function ContactSection() {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [message, setMessage] = useState("")
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+
+        try {
+            const response = await fetch(BACKEND_URL + '/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, message })
+            })
+
+            const data = await response.json()
+
+            if (response.ok) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'Thank you for reaching out. I\'ll get back to you soon!',
+                    confirmButtonColor: '#ef4444',
+                    background: '#1f2937',
+                    color: '#fff'
+                })
+                setName("")
+                setEmail("")
+                setMessage("")
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error || 'Failed to send message. Please try again.',
+                    confirmButtonColor: '#ef4444',
+                    background: '#1f2937',
+                    color: '#fff'
+                })
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Network Error',
+                text: 'Unable to send message. Please check your connection.',
+                confirmButtonColor: '#ef4444',
+                background: '#1f2937',
+                color: '#fff'
+            })
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
     return (
         <>
             <div id="contacts" className="flex flex-col items-start justify-start w-full lg:h-screen px-5 lg:px-40 gap-15">
@@ -62,21 +121,48 @@ export default function ContactSection() {
                             </div>
                         </div>
                         <div className="flex flex-col items-start justify-start w-full h-full">
-                            <form action="" className="flex flex-col items-start justify-center gap-5 lg:justify-between w-full h-full pb-15 lg:pb-25">
+                            <form onSubmit={handleSubmit} className="flex flex-col items-start justify-center gap-5 lg:justify-between w-full h-full pb-15 lg:pb-25">
                                 <div className="flex flex-col items-start justify-center w-full gap-1">
                                     <p className="text-white">Name</p>
-                                    <input type="text" className="w-full bg-gray-800 h-13 rounded-md border-3 border-gray-700 pl-5 active:outline-red-500 focus:outline-none focus:border-red-500 p-5 text-white transition duration-300" placeholder="Your name" />
+                                    <input
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        type="text"
+                                        required
+                                        disabled={isSubmitting}
+                                        className="w-full bg-gray-800 h-13 rounded-md border-3 border-gray-700 pl-5 active:outline-red-500 focus:outline-none focus:border-red-500 p-5 text-white transition duration-300"
+                                        placeholder="Your name"
+                                    />
                                 </div>
                                 <div className="flex flex-col items-start justify-center w-full gap-1">
                                     <p className="text-white">Email</p>
-                                    <input type="email" className="w-full bg-gray-800 h-13 rounded-md border-3 border-gray-700 pl-5 active:outline-red-500 focus:outline-none focus:border-red-500 p-5 text-white transition duration-300" placeholder="your.email@example.com" />
+                                    <input
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        type="email"
+                                        required
+                                        disabled={isSubmitting}
+                                        className="w-full bg-gray-800 h-13 rounded-md border-3 border-gray-700 pl-5 active:outline-red-500 focus:outline-none focus:border-red-500 p-5 text-white transition duration-300"
+                                        placeholder="your.email@example.com"
+                                    />
                                 </div>
                                 <div className="flex flex-col items-start justify-center w-full gap-1">
                                     <p className="text-white">Message</p>
-                                    <textarea className="w-full bg-gray-800 h-40 rounded-md border-3 border-gray-700 active:outline-red-500 focus:outline-none focus:border-red-500 p-5 text-white transition duration-300" placeholder="Your message here..." />
+                                    <textarea
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        required
+                                        disabled={isSubmitting}
+                                        className="w-full bg-gray-800 h-40 rounded-md border-3 border-gray-700 active:outline-red-500 focus:outline-none focus:border-red-500 p-5 text-white transition duration-300"
+                                        placeholder="Your message here..."
+                                    />
                                 </div>
-                                <button className="w-full h-10 bg-red-800 rounded-md text-white text-lg cursor-pointer hover:bg-red-500 transition duration-300 flex flex-row items-center justify-center gap-2">
-                                    Send Message
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full h-10 bg-red-800 rounded-md text-white text-lg cursor-pointer hover:bg-red-500 transition duration-300 flex flex-row items-center justify-center gap-2"
+                                >
+                                    {isSubmitting ? 'Sending...' : 'Send Message'}
                                     <img src={sendIcon} className="h-5 w-auto invert-100" />
                                 </button>
                             </form>
